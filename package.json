@@ -1,0 +1,21 @@
+{
+  "name": "webpack-async-await",
+  "version": "1.0.0",
+  "description": "A webpack Compiler plugin which understands the ES7 keywords async and await",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "cd test ; npm test ; cd .."
+  },
+  "keywords": [
+    "webpack",
+    "ES7",
+    "async",
+    "await"
+  ],
+  "author": "https://github.com/matAtWork",
+  "license": "MIT",
+  "dependencies": {
+    "acorn": "^3.2.0",
+    "acorn-es7-plugin": "^1.0.15"
+  }
+}

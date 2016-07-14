@@ -1,0 +1,18 @@
+{
+  "name": "webpack-async-await-test",
+  "version": "1.0.0",
+  "description": "Test module for webpack-async-await",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm i ; node ."
+  },
+  "author": "https://github.com/MatAtWork",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^2.1.0-beta.17"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "webpack-async-await": "file:///Users/matthewwoolf/git/webpack-async-await"
+  }
+}
