@@ -51,6 +51,7 @@ function AsyncAwaitPlugin(options) {
 
 AsyncAwaitPlugin.prototype.apply = function (compiler) {
     compiler.parser.parse = this.parseAST ;
+    compiler.parser.walkAwaitExpression = compiler.parser.walkYieldExpression ;
 };
 
 module.exports = AsyncAwaitPlugin;
