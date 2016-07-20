@@ -1,6 +1,6 @@
 {
   "name": "webpack-async-await",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A webpack Compiler plugin which understands the ES7 keywords async and await",
   "main": "plugin.js",
   "scripts": {
