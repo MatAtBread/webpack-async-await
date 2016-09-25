@@ -5,7 +5,7 @@ ES7-capable platforms simple.
 
 Usage:
 
-```
+```javascript
 
 var webpack = require('webpack');
 var AsyncAwaitPlugin = require('webpack-async-await') ;
