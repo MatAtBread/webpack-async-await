@@ -4,7 +4,7 @@
   "description": "A webpack Compiler plugin which understands the ES7 keywords async and await",
   "main": "plugin.js",
   "scripts": {
-    "test": "cd test ; npm test ; cd .."
+    "test": "npm i acorn@3 ; cd test ; npm test ; cd .."
   },
   "keywords": [
     "webpack",
