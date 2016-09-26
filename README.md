@@ -3,6 +3,8 @@
 A plugin for webpack understands the ES7 keywords `async` and `await`, making building code for Chrome 53, Edge 14 and other 
 ES7-capable platforms simple.
 
+NB: webpack-async-await@^1.1.0 works with webpack@2.1.0-beta.23, for versions prior to beta.23, use webpack-async-await@1.0.4
+
 Usage:
 
 ```

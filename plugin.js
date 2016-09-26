@@ -1,7 +1,10 @@
 //AsyncAwaitPlugin.js
 
-var acornES7 = require('acorn-es7-plugin')(require("acorn")) ;
-
+try {
+    var acornES7 = require('acorn-es7-plugin')(require("acorn")) ;
+} catch (ex) {
+    throw new Error("Can't locate acorn - is webpack installed correctly?") ;
+}
 
 function AsyncAwaitPlugin(options) {
     if (!options)
@@ -10,7 +13,7 @@ function AsyncAwaitPlugin(options) {
         var ast, lastError, acornOpts = {
             ranges: true,
             locations: true,
-            ecmaVersion: 7,
+            ecmaVersion: 8,
             sourceType: "module",
             plugins:{
                 asyncawait:options
@@ -27,11 +30,11 @@ function AsyncAwaitPlugin(options) {
                 return false ;
             }
         }) ;
-        
+
         if(!ast) 
             throw lastError ;
-        
-        if(typeof ast !== "object")
+
+        if(!ast || typeof ast !== "object")
             throw new Error("Source couldn't be parsed");
         var oldScope = this.scope;
         var oldState = this.state;
@@ -50,8 +53,15 @@ function AsyncAwaitPlugin(options) {
 };
 
 AsyncAwaitPlugin.prototype.apply = function (compiler) {
-    compiler.parser.parse = this.parseAST ;
-    compiler.parser.walkAwaitExpression = compiler.parser.walkYieldExpression ;
+    var self = this ;
+    compiler.plugin("compilation", function(compilation, params) {
+        params.normalModuleFactory.plugin("parser", function(parser, parserOptions) {
+            parser.parse = self.parseAST ;
+            parser.walkAwaitExpression = function(){
+                return this.walkYieldExpression.apply(this,arguments) ;
+            }
+        });
+    });
 };
 
 module.exports = AsyncAwaitPlugin;

@@ -9,10 +9,9 @@
   "author": "https://github.com/MatAtWork",
   "license": "MIT",
   "devDependencies": {
-    "webpack": "^2.1.0-beta.17"
+    "webpack": "^2.1.0-beta.25"
   },
   "dependencies": {
-    "colors": "^1.1.2",
-    "webpack-async-await": "file:///Users/matthewwoolf/git/webpack-async-await"
+    "colors": "^1.1.2"
   }
 }

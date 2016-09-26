@@ -1,6 +1,6 @@
 var fs = require('fs');
 var webpack = require('webpack');
-var AsyncAwaitPlugin = require('webpack-async-await') ;
+var AsyncAwaitPlugin = require('..') ;
 require('colors') ;
 
 webpack({
@@ -22,7 +22,7 @@ webpack({
         if ((fs.readFileSync(__dirname+'/test-output.js').toString().indexOf(fs.readFileSync(__dirname+'/test-input.js').toString())) > 0) {
             console.log('Pass'.green) ;
         } else {
-            console.log('Failed'.green) ;
+            console.log('Failed'.red) ;
         }
     }
 });
