@@ -7,7 +7,7 @@ NB: webpack-async-await@^1.1.0 works with webpack@2.1.0-beta.23, for versions pr
 
 Usage:
 
-```
+```javascript
 
 var webpack = require('webpack');
 var AsyncAwaitPlugin = require('webpack-async-await') ;
